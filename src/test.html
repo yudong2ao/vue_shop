@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+</head>
+
+<body>
+<script type="text/javascript">
+  //补充代码
+  Object.defineProperty(Object,"freezeobject",{
+    value:function(obj){
+      for(i in obj){
+        if(obj.hasOwnProperty(i)){
+          if(typeOf obj[i]==="Object"){
+            Object.defineProperty(obj,'i',{
+              writable:false})
+          }else{
+            Object.freezeobject(i);
+          }
+        }
+      }
+      obj.seal(i);
+    }
+  })
+  var tsobj={a:1, b:{c:2}};
+  Object.freezeobject(tsobj);
+</script>
+</body>
+</html>
