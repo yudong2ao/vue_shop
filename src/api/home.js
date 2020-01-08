@@ -20,7 +20,7 @@ export const getHomeSlider = () => {
     return new Promise(resolve => {
       setTimeout(() => {
         resolve(res);
-      }, 4000);
+      }, 1000);
     });
   });
 };

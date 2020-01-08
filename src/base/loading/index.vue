@@ -26,6 +26,12 @@
   };
 </script>
 
-<style scoped>
-
+<style lang="scss" scoped>
+  @import "~assets/scss/mixins";
+  .loading-box {
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    @include flex-content(column);
+  }
 </style>

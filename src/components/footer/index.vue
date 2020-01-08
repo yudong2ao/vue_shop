@@ -1,7 +1,7 @@
 <template>
   <div class="g-footer">
     <router-link class="g-footer-item" to="/home">
-      <i class="iconfont icon-home"></i>
+      <i class="icon_font icon-home"></i>
       <span>首页</span>
     </router-link>
     <router-link class="g-footer-item" to="/category">
@@ -26,7 +26,7 @@
 </script>
 
 <style lang="scss" scoped>
-  @import "../../assets/scss/mixins.scss";
+  @import "~assets/scss/mixins";
   .router-link-active{
      color: $link-active-color;
    }

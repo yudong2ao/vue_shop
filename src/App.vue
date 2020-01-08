@@ -10,7 +10,7 @@
 </template>
 
 <script>
-  import vfooter from '@/components/footer';
+  import vfooter from 'components/footer';
   export default {
     name: 'App',
     components: {
@@ -19,7 +19,3 @@
   };
 
 </script>
-
-<style lang="scss">
-
-</style>

@@ -22,7 +22,7 @@
 
 <style lang="scss" scoped>
 .navbar{
-  @import '../../assets/scss/mixins';
+  @import '~assets/scss/mixins';
   @include flex-justify();
   height: 50px;
   position: relative;

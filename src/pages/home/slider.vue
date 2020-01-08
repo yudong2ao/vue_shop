@@ -12,7 +12,7 @@
 </template>
 
 <script>
-  import swiper from '../../base/slider/index';
+  import swiper from '@/base/slider/';
   import {swiperSlide} from 'vue-awesome-swiper';
   import {swiperOptions} from './config';
   import {getHomeSlider} from '../../api/home';
@@ -47,6 +47,10 @@
 </script>
 
 <style scoped lang="scss">
+  .swiperBox{
+    width: 100%;
+    height: 183px;
+  }
   .swiper{
     width: 100%;
     height: 183px;

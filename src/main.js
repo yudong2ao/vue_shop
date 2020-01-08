@@ -3,7 +3,7 @@ import Vue from 'vue';
 import App from './App';
 import router from './router';
 import fastclick from 'fastclick';
-import './assets/scss/index.scss';
+import 'assets/scss/index.scss';
 import 'swiper/dist/css/swiper.css';
 fastclick.attach(document.body);
 Vue.config.productionTip = false;
