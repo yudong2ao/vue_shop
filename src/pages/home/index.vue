@@ -3,15 +3,18 @@
     <div class="header">
       <home-header></home-header>
     </div>
-    <div class="swiper">
+    <home-scroll>
       <home-slider></home-slider>
-    </div>
+      <nav-bar></nav-bar>
+    </home-scroll>
   </div>
 </template>
 
 <script>
   import homeHeader from './header';
   import homeSlider from './slider';
+  import homeScroll from '@/base/scroll';
+  import navBar from './navbar';
   export default {
     name: 'home',
     data() {
@@ -19,7 +22,9 @@
     },
     components: {
       homeHeader,
-      homeSlider
+      homeSlider,
+      homeScroll,
+      navBar
     }
   };
 </script>

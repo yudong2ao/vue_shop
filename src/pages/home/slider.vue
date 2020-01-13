@@ -1,13 +1,13 @@
 <template>
   <div class="swiperBox">
-    <loading></loading>
-    <!--<swiper v-if="swiperArray.length" :direction="direction" :interval="interval" :loop="loop" :pagination="pagination" class="swiper">
+    <loading v-if="!swiperArray.length" class="my-loading" :inline="loading"></loading>
+    <swiper v-else :direction="direction" :interval="interval" :loop="loop" :pagination="pagination" class="swiper">
       <swiper-slide class="swiper-slide" v-for="(item,index) in swiperArray" :key="index" slot="swiperfirst">
         <a :href="item.linkUrl" class="swiperlink">
           <img :src="item.picUrl" alt="" class="swiperurl">
         </a>
       </swiper-slide>
-    </swiper>-->
+    </swiper>
   </div>
 </template>
 
@@ -30,7 +30,8 @@
         loop: swiperOptions.loop,
         pagination: swiperOptions.pagination,
         interval: swiperOptions.interval,
-        swiperArray: []
+        swiperArray: [],
+        loading: true
       };
     },
     methods: {

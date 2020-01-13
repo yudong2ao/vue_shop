@@ -1,10 +1,10 @@
 <template>
   <div class="g-footer">
     <router-link class="g-footer-item" to="/home">
-      <i class="icon_font icon-home"></i>
+      <i class="iconfont icon-home"></i>
       <span>首页</span>
     </router-link>
-    <router-link class="g-footer-item" to="/category">
+    <router-link class="g-footer-item" to="category">
       <i class="iconfont icon-31leimu"></i>
       <span>分类</span>
     </router-link>

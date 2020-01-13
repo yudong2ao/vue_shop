@@ -1,5 +1,5 @@
 <template>
-  <div class="loading-box">
+  <div class="loading-box" :class="{'loading-box-row': inline}">
     <span class="load-img" v-if="indicator==='on'">
       <slot><img src="./loading.gif" alt=""></slot>
     </span>
@@ -21,6 +21,10 @@
       text: {
         type: String,
         default: '加载中……'
+      },
+      inline: {
+        type: Boolean,
+        default: false
       }
     }
   };
@@ -33,5 +37,15 @@
     height: 100%;
     overflow: hidden;
     @include flex-content(column);
+    .load-img + .load-text {
+      margin-top: 6px;
+    }
+  }
+  .loading-box-row {
+    flex-direction: row;
+    .load-img ~ .load-text {
+      margin-top: 0;
+      margin-left: 6px;
+    }
   }
 </style>
