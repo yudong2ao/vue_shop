@@ -5,9 +5,11 @@ Vue.use(Router);
 
 export default new Router({
   routes: [{
+    name: 'home',
     path: '/home',
     component: () => import('@/pages/home'),
     children: [{
+      name: 'home-product',
       path: 'product/:id',
       component: () => import('@/pages/product')
     }, {

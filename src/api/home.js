@@ -1,5 +1,6 @@
 import axios from 'axios';
-import {SUCC_CODE, TIMEOUT} from './config';
+import jsonp from 'assets/js/jsonp';
+import {SUCC_CODE, TIMEOUT, HOME_RECOMMEND_PAGE_SIZE, jsonpOptions} from './config';
 
 export const getHomeSlider = () => {
   return axios.get('http://www.imooc.com/api/home/slider', {timeout: TIMEOUT}).then(res => {
@@ -20,6 +21,33 @@ export const getHomeSlider = () => {
     return new Promise(resolve => {
       setTimeout(() => {
         resolve(res);
+      }, 1000);
+    });
+  });
+};
+
+// 获取热门推荐数据--jsonp
+export const getHomeRecommend = (page = 1, psize = HOME_RECOMMEND_PAGE_SIZE) => {
+  const url = 'https://ju.taobao.com/json/tg/ajaxGetItemsV2.json';
+  const params = {
+    page,
+    psize,
+    type: 0,
+    frontCatId: ''
+  };
+  return jsonp(url, params, jsonpOptions).then(res => {
+    if (res.code === '200') {
+      return res;
+    }
+    throw new Error('没有成功获取到数据！');
+  }).catch(err => {
+    if (err) {
+      console.log(err);
+    }
+  }).then(data => {
+    return new Promise(resolve => {
+      setTimeout(() => {
+        resolve(data);
       }, 1000);
     });
   });

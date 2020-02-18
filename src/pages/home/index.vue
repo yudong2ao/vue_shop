@@ -3,10 +3,12 @@
     <div class="header">
       <home-header></home-header>
     </div>
-    <home-scroll>
+    <home-scroll :data="reSonData">
       <home-slider></home-slider>
       <nav-bar></nav-bar>
+      <homeRecommend @load="getSonData"></homeRecommend>
     </home-scroll>
+    <router-view></router-view>
   </div>
 </template>
 
@@ -15,16 +17,25 @@
   import homeSlider from './slider';
   import homeScroll from '@/base/scroll';
   import navBar from './navbar';
+  import homeRecommend from './recommend.vue';
   export default {
     name: 'home',
     data() {
-      return { };
+      return {
+        reSonData: []
+      };
+    },
+    methods: {
+      getSonData(msg) {
+        this.reSonData = msg;
+      }
     },
     components: {
       homeHeader,
       homeSlider,
       homeScroll,
-      navBar
+      navBar,
+      homeRecommend
     }
   };
 </script>
